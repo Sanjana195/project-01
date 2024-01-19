@@ -1,0 +1,23 @@
+<table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <!-- Add other headers as needed -->
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee_list %}
+            <tr>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <!-- Add other data cells as needed -->
+                <td><a href="{{ url_for('edit_employee', employee_id=employee.id) }}">Edit</a></td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
